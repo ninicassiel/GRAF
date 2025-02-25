@@ -13,12 +13,12 @@ import datetime
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Process some configurations.')
-    parser.add_argument('--base_dir', default='D:/yhy/data/huashan', help='Base directory path.')
+    parser.add_argument('--base_dir', default='/GRAFS/data', help='Base directory path.')
     parser.add_argument('--table_path_file',
-                        default='T#019fmriROISignalRecoder_woHeadPoor_100_withAbeta_dmri_resplit_fold.csv',
+                        default='SubjectsTable.csv',
                         help='Path to table file.')
-    parser.add_argument('--dmri_graph_dir', type=str, default="014_dmri_sc", help='Directory for DMRi graphs.')
-    parser.add_argument('--fmri_graph_dir', type=str, default="011_fmri_fc", help='Directory for fMRI graphs.')
+    parser.add_argument('--dmri_graph_dir', type=str, default="dmri_sc", help='Directory for DMRi graphs.')
+    parser.add_argument('--fmri_graph_dir', type=str, default="fmri_fc", help='Directory for fMRI graphs.')
 
     parser.add_argument('--num_folds', type=int, default=2, help='Number of folds.')
     parser.add_argument('--model_type', default='sc', help='Model type.')
@@ -58,7 +58,7 @@ def parse_args():
     parser.add_argument('--deg', action='store_true', default=False, help='Boolean flag for degree information.')
 
     parser.add_argument('--pretrained',
-                        default=r'D:\Projects\Output\dmri_fmri2PET\PyG_models_v17_1\2024_12_17_20_59_13_0.4_0.4_0.2\fold_1\Best_model_epoch_1843_loss0.9246_fcAcc0.7742_fcAuc0.8600_scAcc0.7717_scAuc0.8604.pth',
+                        default=r'Best_model_epoch_1843_loss0.9246_fcAcc0.7742_fcAuc0.8600_scAcc0.7717_scAuc0.8604.pth',
                         help='Path to pretrained model.')
     parser.add_argument('--description', default='sc/fc reconstruction.', help='Description of the process.')
     return parser.parse_args()

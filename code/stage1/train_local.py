@@ -13,16 +13,13 @@ import datetime
 
 def parse_command_line_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base_dir', type=str, default="D:/yhy/data/huashan",
-                        help='Base directory path.')
-    parser.add_argument('--out_dir', type=str, default="D:/Projects/Output/dmri_fmri2PET/PyG_models_v17_1",
-                        help='Output directory path.')
-    parser.add_argument('--minitest', type=bool, default=False, help='Boolean flag for minitest.')
-    parser.add_argument('--table_path_file', type=str,
-                        default="T#019fmriROISignalRecoder_woHeadPoor_100_withAbeta_dmri_resplit_fold.csv",
+    parser.add_argument('--base_dir', default='/GRAFS/data', help='Base directory path.')
+    parser.add_argument('--table_path_file',
+                        default='SubjectsTable.csv',
                         help='Path to table file.')
-    parser.add_argument('--dmri_graph_dir', type=str, default="014_dmri_sc", help='Directory for DMRi graphs.')
-    parser.add_argument('--fmri_graph_dir', type=str, default="011_fmri_fc", help='Directory for fMRI graphs.')
+    parser.add_argument('--dmri_graph_dir', type=str, default="dmri_sc", help='Directory for DMRi graphs.')
+    parser.add_argument('--fmri_graph_dir', type=str, default="fmri_fc", help='Directory for fMRI graphs.')
+
 
     parser.add_argument('--num_folds', type=int, default=5, help='Number of folds.')
     parser.add_argument('--model_type', type=str, default="both", help='Model type.')
@@ -67,9 +64,6 @@ def parse_command_line_args():
     parser.add_argument('--degree_decoder_dropout', type=float, default=0,
                         help='Dropout rate for the degree decoder.')
     parser.add_argument('--decoder_pretrained', type=bool, default=False, help='Boolean flag for decoder pretrained.')
-
-    parser.add_argument('--fc_pretrained', type=str, default=r'D:\Projects\Output\dmri_fmri2PET\PyG_models_v8_4\2024_12_09_20_57_46_fc_0.4_0.2\fold_5\Best_model_epoch_1836_acc0.7830_loss0.4409_auc0.8729_sens0.7765_spec0.7896.pth', help='Pretrained model path.')
-    parser.add_argument('--sc_pretrained', type=str, default=r'D:\Projects\Output\dmri_fmri2PET\PyG_models_v8_4\2024_12_09_20_54_31_sc_0.4_0.2\fold_5\Best_model_epoch_1848_acc0.8399_loss0.3569_auc0.9213_sens0.8433_spec0.8366.pth', help='Pretrained model path.')
 
     parser.add_argument('--description', type=str, default="sc reconstruction.", help='Description of the experiment.')
     return parser.parse_args()

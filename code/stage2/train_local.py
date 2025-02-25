@@ -13,17 +13,14 @@ import datetime
 
 def parse_command_line_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--base_dir', type=str, default="D:/yhy/data/huashan",
-                        help='Base directory path.')
-    parser.add_argument('--out_dir', type=str, default="D:/Projects/Output/dmri_fmri2PET/PyG_models_v17_2",
-                        help='Output directory path.')
-    parser.add_argument('--minitest', type=bool, default=False, help='Boolean flag for minitest.')
-    parser.add_argument('--table_path_file', type=str,
-                        default="T#019fmriROISignalRecoder_woHeadPoor_100_withAbeta_dmri_resplit_inPET_fold.csv",
+    parser.add_argument('--base_dir', default='/GRAFS/data', help='Base directory path.')
+    parser.add_argument('--table_path_file',
+                        default='SubjectsTable.csv',
                         help='Path to table file.')
-    parser.add_argument('--dmri_graph_dir', type=str, default="014_dmri_sc", help='Directory for DMRi graphs.')
-    parser.add_argument('--fmri_graph_dir', type=str, default="011_fmri_fc", help='Directory for fMRI graphs.')
-    parser.add_argument('--pet_dir', type=str, default="013_PET_suvr_ROI100_pt2", help='Directory for PET data.')
+    parser.add_argument('--dmri_graph_dir', type=str, default="dmri_sc", help='Directory for DMRi graphs.')
+    parser.add_argument('--fmri_graph_dir', type=str, default="fmri_fc", help='Directory for fMRI graphs.')
+    parser.add_argument('--pet_dir', type=str, default="PET_suvr", help='Directory for PET data.')
+
 
     parser.add_argument('--num_folds', type=int, default=5, help='Number of folds.')
     parser.add_argument('--model_type', type=str, default="both", help='Model type.')
@@ -58,7 +55,7 @@ def parse_command_line_args():
 
     parser.add_argument('--freeze_encoder',type=bool,default=True,help='Boolean flag for freezing the encoder.')
     parser.add_argument('--cross_fusion_type', type=str, default='attn', help='Cross fussion type: cat,attn')
-    parser.add_argument('--pretrained', type=str, default=r'D:\\Projects\\Output\\dmri_fmri2PET\\PyG_models_v17_1_2\\2024_12_24_21_01_44_0.4_0.4_0.2\\fold_1\\Best_model_epoch_1311_loss0.8556_fcAcc0.7912_fcAuc0.8801_scAcc0.7923_scAuc0.8823.pth', help='Pretrained model path.')
+    parser.add_argument('--pretrained', type=str, default=r'Best_model_epoch_1311_loss0.8556_fcAcc0.7912_fcAuc0.8801_scAcc0.7923_scAuc0.8823.pth', help='Pretrained model path.')
     parser.add_argument('--description', type=str, default="Abeta prediction.", help='Description of the experiment.')
     parser.add_argument('--random_seed', type=int, default=42, help='Random seed.')
     return parser.parse_args()

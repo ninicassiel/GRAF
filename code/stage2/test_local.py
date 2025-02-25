@@ -13,13 +13,13 @@ import datetime
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Process some configurations.')
-    parser.add_argument('--base_dir', default='D:/yhy/data/huashan', help='Base directory path.')
+    parser.add_argument('--base_dir', default='/GRAFS/data', help='Base directory path.')
     parser.add_argument('--table_path_file',
-                        default='T#019fmriROISignalRecoder_woHeadPoor_100_withAbeta_dmri_resplit_fold.csv',
+                        default='SubjectsTable.csv',
                         help='Path to table file.')
-    parser.add_argument('--dmri_graph_dir', type=str, default="014_dmri_sc", help='Directory for DMRi graphs.')
-    parser.add_argument('--fmri_graph_dir', type=str, default="011_fmri_fc", help='Directory for fMRI graphs.')
-    parser.add_argument('--pet_dir', type=str, default="013_PET_suvr_ROI100_pt2", help='Directory for PET data.')
+    parser.add_argument('--dmri_graph_dir', type=str, default="dmri_sc", help='Directory for DMRi graphs.')
+    parser.add_argument('--fmri_graph_dir', type=str, default="fmri_fc", help='Directory for fMRI graphs.')
+    parser.add_argument('--pet_dir', type=str, default="PET_suvr", help='Directory for PET data.')
 
     parser.add_argument('--num_folds', type=int, default=1, help='Number of folds.')
     parser.add_argument('--model_type', default='sc', help='Model type.')
@@ -55,8 +55,7 @@ def parse_args():
     parser.add_argument('--return_attention_feature',type = bool,default=True,help='Return attention feature flag.')
     parser.add_argument('--return_MLP_feat',type = int,default=2,help='Return MLP feature flag,0 means No,')
     parser.add_argument('--pretrained',
-                        default=r'D:\Projects\Output\dmri_fmri2PET\PyG_models_v17_2\2025_01_14_11_03_13_both_0.4_0.4seed42\fold_3\Best_model_epoch_943_regreLoss0.0342.pth',
-                        # default=r'D:\Projects\Output\dmri_fmri2PET\PyG_models_v17_2\2024_12_06_14_43_30_both_0.4_0.4seed114514\fold_3\Best_model_epoch_071_regreLoss0.0358.pth',
+                        default=r'xxx',
                         help='Path to pretrained model.')
     parser.add_argument('--description', default='sc/fc reconstruction.', help='Description of the process.')
     return parser.parse_args()
