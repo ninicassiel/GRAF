@@ -1,0 +1,15 @@
+subject_id,Diag-GUO,manul,combine,manul_encoder,combine_encoder,dataset,fold
+AFM0006,MCI,“ı,“ı,0,0,train,1
+AFM0044,AD,—Ù,—Ù,1,1,train,4
+AFM0046,AD,—Ù,—Ù,1,1,train,5
+AFM0079,NC,“ı,“ı,0,0,val,5
+AFM0080,NC,“ı,“ı,0,0,train,2
+AFM0139,NC,“ı,“ı,0,0,val,5
+AFM0140,NC,»ı—Ù,—Ù,1,1,train,3
+AFM0141,NC,“ı,“ı,0,0,train,4
+AFM0142,MCI,“ı,“ı,0,0,val,5
+AFM0143,NC,“ı,“ı,0,0,train,1
+AFM0145,NC,“ı,“ı,0,0,val,5
+AFM0147,NC,»ı—Ù,—Ù,1,1,train,4
+AFM0148,NC,“ı,“ı,0,0,train,3
+AFM0150,NC,“ı,“ı,0,0,val,5
